@@ -19,7 +19,7 @@ jobs:
         node-version: 'latest'
 
     - name: Restore dependencies
-      run: arch -x86_64 yarn install
+      run: npm_config_arch=x64 npm_config_platform=darwin yarn install
 
     - name: Build for Mac
       run: yarn build-mac
