@@ -1,0 +1,25 @@
+name: "Build-Linux"
+on:
+  push:
+    branches: [ actions ]
+  pull_request:
+    branches: [ actions ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install Node.js, NPM and Yarn
+      uses: actions/setup-node@v3
+      with:
+        node-version: 'latest'
+
+    - name: Restore dependencies
+      run: yarn install
+
+    - name: Build for Linux
+      run: yarn build-linux
