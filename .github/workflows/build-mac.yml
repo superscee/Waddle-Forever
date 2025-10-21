@@ -16,14 +16,10 @@ jobs:
     - name: Install Node.js, NPM and Yarn
       uses: actions/setup-node@v3
       with:
-        node-version: 'v22.x'
-        architecture: 'x86'
+        node-version: 'latest'
 
     - name: Restore dependencies
-      run: yarn install
-
-    - name: Build packages
-      run: yarn build-packages
+      run: arch -x86_64 yarn install
 
     - name: Build for Mac
       run: yarn build-mac
