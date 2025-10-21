@@ -22,6 +22,8 @@ jobs:
     - name: Restore dependencies
       run: yarn install
 
-    - name: Build for Mac
+    - name: Build packages
       run: yarn build-packages
+
+    -name: Build for Mac
       run: yarn build-mac
